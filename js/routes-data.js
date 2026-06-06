@@ -1,0 +1,593 @@
+// Global database object for route distances between Brazilian cities.
+// This database only contains the supported cities used by the calculator.
+var RoutesDB = {
+    // Routes include all possible origin/destination combinations
+    routes: [
+        {
+            origin: "São Paulo, SP",
+            destination: "Rio de Janeiro, RJ",
+            distanceKM: 415
+        },
+        {
+            origin: "Rio de Janeiro, RJ",
+            destination: "São Paulo, SP",
+            distanceKM: 415
+        },
+        {
+            origin: "São Paulo, SP",
+            destination: "Campinas, SP",
+            distanceKM: 97
+        },
+        {
+            origin: "Campinas, SP",
+            destination: "São Paulo, SP",
+            distanceKM: 97
+        },
+        {
+            origin: "São Paulo, SP",
+            destination: "Santos, SP",
+            distanceKM: 63
+        },
+        {
+            origin: "Santos, SP",
+            destination: "São Paulo, SP",
+            distanceKM: 63
+        },
+        {
+            origin: "São Paulo, SP",
+            destination: "Brasília, DF",
+            distanceKM: 1003
+        },
+        {
+            origin: "Brasília, DF",
+            destination: "São Paulo, SP",
+            distanceKM: 1003
+        },
+        {
+            origin: "São Paulo, SP",
+            destination: "Oiapoque, AM",
+            distanceKM: 3562
+        },
+        {
+            origin: "Oiapoque, AM",
+            destination: "São Paulo, SP",
+            distanceKM: 3562
+        },
+        {
+            origin: "São Paulo, SP",
+            destination: "Salto, SP",
+            distanceKM: 90
+        },
+        {
+            origin: "Salto, SP",
+            destination: "São Paulo, SP",
+            distanceKM: 90
+        },
+        {
+            origin: "São Paulo, SP",
+            destination: "Divinópolis, MG",
+            distanceKM: 483
+        },
+        {
+            origin: "Divinópolis, MG",
+            destination: "São Paulo, SP",
+            distanceKM: 483
+        },
+        {
+            origin: "São Paulo, SP",
+            destination: "Mâncio Lima, AC",
+            distanceKM: 3821
+        },
+        {
+            origin: "Mâncio Lima, AC",
+            destination: "São Paulo, SP",
+            distanceKM: 3821
+        },
+        {
+            origin: "São Paulo, SP",
+            destination: "João Pessoa, PB",
+            distanceKM: 2551
+        },
+        {
+            origin: "João Pessoa, PB",
+            destination: "São Paulo, SP",
+            distanceKM: 2551
+        },
+        {
+            origin: "São Paulo, SP",
+            destination: "Chuí, RS",
+            distanceKM: 1505
+        },
+        {
+            origin: "Chuí, RS",
+            destination: "São Paulo, SP",
+            distanceKM: 1505
+        },
+        {
+            origin: "Rio de Janeiro, RJ",
+            destination: "Campinas, SP",
+            distanceKM: 458
+        },
+        {
+            origin: "Campinas, SP",
+            destination: "Rio de Janeiro, RJ",
+            distanceKM: 458
+        },
+        {
+            origin: "Rio de Janeiro, RJ",
+            destination: "Santos, SP",
+            distanceKM: 395
+        },
+        {
+            origin: "Santos, SP",
+            destination: "Rio de Janeiro, RJ",
+            distanceKM: 395
+        },
+        {
+            origin: "Rio de Janeiro, RJ",
+            destination: "Brasília, DF",
+            distanceKM: 1072
+        },
+        {
+            origin: "Brasília, DF",
+            destination: "Rio de Janeiro, RJ",
+            distanceKM: 1072
+        },
+        {
+            origin: "Rio de Janeiro, RJ",
+            destination: "Oiapoque, AM",
+            distanceKM: 3587
+        },
+        {
+            origin: "Oiapoque, AM",
+            destination: "Rio de Janeiro, RJ",
+            distanceKM: 3587
+        },
+        {
+            origin: "Rio de Janeiro, RJ",
+            destination: "Salto, SP",
+            distanceKM: 487
+        },
+        {
+            origin: "Salto, SP",
+            destination: "Rio de Janeiro, RJ",
+            distanceKM: 487
+        },
+        {
+            origin: "Rio de Janeiro, RJ",
+            destination: "Divinópolis, MG",
+            distanceKM: 408
+        },
+        {
+            origin: "Divinópolis, MG",
+            destination: "Rio de Janeiro, RJ",
+            distanceKM: 408
+        },
+        {
+            origin: "Rio de Janeiro, RJ",
+            destination: "Mâncio Lima, AC",
+            distanceKM: 4152
+        },
+        {
+            origin: "Mâncio Lima, AC",
+            destination: "Rio de Janeiro, RJ",
+            distanceKM: 4152
+        },
+        {
+            origin: "Rio de Janeiro, RJ",
+            destination: "João Pessoa, PB",
+            distanceKM: 2264
+        },
+        {
+            origin: "João Pessoa, PB",
+            destination: "Rio de Janeiro, RJ",
+            distanceKM: 2264
+        },
+        {
+            origin: "Rio de Janeiro, RJ",
+            destination: "Chuí, RS",
+            distanceKM: 1798
+        },
+        {
+            origin: "Chuí, RS",
+            destination: "Rio de Janeiro, RJ",
+            distanceKM: 1798
+        },
+        {
+            origin: "Campinas, SP",
+            destination: "Santos, SP",
+            distanceKM: 160
+        },
+        {
+            origin: "Santos, SP",
+            destination: "Campinas, SP",
+            distanceKM: 160
+        },
+        {
+            origin: "Campinas, SP",
+            destination: "Brasília, DF",
+            distanceKM: 915
+        },
+        {
+            origin: "Brasília, DF",
+            destination: "Campinas, SP",
+            distanceKM: 915
+        },
+        {
+            origin: "Campinas, SP",
+            destination: "Oiapoque, AM",
+            distanceKM: 3472
+        },
+        {
+            origin: "Oiapoque, AM",
+            destination: "Campinas, SP",
+            distanceKM: 3472
+        },
+        {
+            origin: "Campinas, SP",
+            destination: "Salto, SP",
+            distanceKM: 47
+        },
+        {
+            origin: "Salto, SP",
+            destination: "Campinas, SP",
+            distanceKM: 47
+        },
+        {
+            origin: "Campinas, SP",
+            destination: "Divinópolis, MG",
+            distanceKM: 438
+        },
+        {
+            origin: "Divinópolis, MG",
+            destination: "Campinas, SP",
+            distanceKM: 438
+        },
+        {
+            origin: "Campinas, SP",
+            destination: "Mâncio Lima, AC",
+            distanceKM: 3738
+        },
+        {
+            origin: "Mâncio Lima, AC",
+            destination: "Campinas, SP",
+            distanceKM: 3738
+        },
+        {
+            origin: "Campinas, SP",
+            destination: "João Pessoa, PB",
+            distanceKM: 2517
+        },
+        {
+            origin: "João Pessoa, PB",
+            destination: "Campinas, SP",
+            distanceKM: 2517
+        },
+        {
+            origin: "Campinas, SP",
+            destination: "Chuí, RS",
+            distanceKM: 1554
+        },
+        {
+            origin: "Chuí, RS",
+            destination: "Campinas, SP",
+            distanceKM: 1554
+        },
+        {
+            origin: "Santos, SP",
+            destination: "Brasília, DF",
+            distanceKM: 1061
+        },
+        {
+            origin: "Brasília, DF",
+            destination: "Santos, SP",
+            distanceKM: 1061
+        },
+        {
+            origin: "Santos, SP",
+            destination: "Oiapoque, AM",
+            distanceKM: 3621
+        },
+        {
+            origin: "Oiapoque, AM",
+            destination: "Santos, SP",
+            distanceKM: 3621
+        },
+        {
+            origin: "Santos, SP",
+            destination: "Salto, SP",
+            distanceKM: 149
+        },
+        {
+            origin: "Salto, SP",
+            destination: "Santos, SP",
+            distanceKM: 149
+        },
+        {
+            origin: "Santos, SP",
+            destination: "Divinópolis, MG",
+            distanceKM: 518
+        },
+        {
+            origin: "Divinópolis, MG",
+            destination: "Santos, SP",
+            distanceKM: 518
+        },
+        {
+            origin: "Santos, SP",
+            destination: "Mâncio Lima, AC",
+            distanceKM: 3877
+        },
+        {
+            origin: "Mâncio Lima, AC",
+            destination: "Santos, SP",
+            distanceKM: 3877
+        },
+        {
+            origin: "Santos, SP",
+            destination: "João Pessoa, PB",
+            distanceKM: 2573
+        },
+        {
+            origin: "João Pessoa, PB",
+            destination: "Santos, SP",
+            distanceKM: 2573
+        },
+        {
+            origin: "Santos, SP",
+            destination: "Chuí, RS",
+            distanceKM: 1477
+        },
+        {
+            origin: "Chuí, RS",
+            destination: "Santos, SP",
+            distanceKM: 1477
+        },
+        {
+            origin: "Brasília, DF",
+            destination: "Oiapoque, AM",
+            distanceKM: 2560
+        },
+        {
+            origin: "Oiapoque, AM",
+            destination: "Brasília, DF",
+            distanceKM: 2560
+        },
+        {
+            origin: "Brasília, DF",
+            destination: "Salto, SP",
+            distanceKM: 950
+        },
+        {
+            origin: "Salto, SP",
+            destination: "Brasília, DF",
+            distanceKM: 950
+        },
+        {
+            origin: "Brasília, DF",
+            destination: "Divinópolis, MG",
+            distanceKM: 665
+        },
+        {
+            origin: "Divinópolis, MG",
+            destination: "Brasília, DF",
+            distanceKM: 665
+        },
+        {
+            origin: "Brasília, DF",
+            destination: "Mâncio Lima, AC",
+            distanceKM: 3311
+        },
+        {
+            origin: "Mâncio Lima, AC",
+            destination: "Brasília, DF",
+            distanceKM: 3311
+        },
+        {
+            origin: "Brasília, DF",
+            destination: "João Pessoa, PB",
+            distanceKM: 1973
+        },
+        {
+            origin: "João Pessoa, PB",
+            destination: "Brasília, DF",
+            distanceKM: 1973
+        },
+        {
+            origin: "Brasília, DF",
+            destination: "Chuí, RS",
+            distanceKM: 2377
+        },
+        {
+            origin: "Chuí, RS",
+            destination: "Brasília, DF",
+            distanceKM: 2377
+        },
+        {
+            origin: "Oiapoque, AM",
+            destination: "Salto, SP",
+            distanceKM: 3504
+        },
+        {
+            origin: "Salto, SP",
+            destination: "Oiapoque, AM",
+            distanceKM: 3504
+        },
+        {
+            origin: "Oiapoque, AM",
+            destination: "Divinópolis, MG",
+            distanceKM: 3188
+        },
+        {
+            origin: "Divinópolis, MG",
+            destination: "Oiapoque, AM",
+            distanceKM: 3188
+        },
+        {
+            origin: "Oiapoque, AM",
+            destination: "Mâncio Lima, AC",
+            distanceKM: 3073
+        },
+        {
+            origin: "Mâncio Lima, AC",
+            destination: "Oiapoque, AM",
+            distanceKM: 3073
+        },
+        {
+            origin: "Oiapoque, AM",
+            destination: "João Pessoa, PB",
+            distanceKM: 2582
+        },
+        {
+            origin: "João Pessoa, PB",
+            destination: "Oiapoque, AM",
+            distanceKM: 2582
+        },
+        {
+            origin: "Oiapoque, AM",
+            destination: "Chuí, RS",
+            distanceKM: 4803
+        },
+        {
+            origin: "Chuí, RS",
+            destination: "Oiapoque, AM",
+            distanceKM: 4803
+        },
+        {
+            origin: "Salto, SP",
+            destination: "Divinópolis, MG",
+            distanceKM: 485
+        },
+        {
+            origin: "Divinópolis, MG",
+            destination: "Salto, SP",
+            distanceKM: 485
+        },
+        {
+            origin: "Salto, SP",
+            destination: "Mâncio Lima, AC",
+            distanceKM: 3731
+        },
+        {
+            origin: "Mâncio Lima, AC",
+            destination: "Salto, SP",
+            distanceKM: 3731
+        },
+        {
+            origin: "Salto, SP",
+            destination: "João Pessoa, PB",
+            distanceKM: 2563
+        },
+        {
+            origin: "João Pessoa, PB",
+            destination: "Salto, SP",
+            distanceKM: 2563
+        },
+        {
+            origin: "Salto, SP",
+            destination: "Chuí, RS",
+            distanceKM: 1508
+        },
+        {
+            origin: "Chuí, RS",
+            destination: "Salto, SP",
+            distanceKM: 1508
+        },
+        {
+            origin: "Divinópolis, MG",
+            destination: "Mâncio Lima, AC",
+            distanceKM: 3831
+        },
+        {
+            origin: "Mâncio Lima, AC",
+            destination: "Divinópolis, MG",
+            distanceKM: 3831
+        },
+        {
+            origin: "Divinópolis, MG",
+            destination: "João Pessoa, PB",
+            distanceKM: 2078
+        },
+        {
+            origin: "João Pessoa, PB",
+            destination: "Divinópolis, MG",
+            distanceKM: 2078
+        },
+        {
+            origin: "Divinópolis, MG",
+            destination: "Chuí, RS",
+            distanceKM: 1987
+        },
+        {
+            origin: "Chuí, RS",
+            destination: "Divinópolis, MG",
+            distanceKM: 1987
+        },
+        {
+            origin: "Mâncio Lima, AC",
+            destination: "João Pessoa, PB",
+            distanceKM: 4838
+        },
+        {
+            origin: "João Pessoa, PB",
+            destination: "Mâncio Lima, AC",
+            distanceKM: 4838
+        },
+        {
+            origin: "Mâncio Lima, AC",
+            destination: "Chuí, RS",
+            distanceKM: 4054
+        },
+        {
+            origin: "Chuí, RS",
+            destination: "Mâncio Lima, AC",
+            distanceKM: 4054
+        },
+        {
+            origin: "João Pessoa, PB",
+            destination: "Chuí, RS",
+            distanceKM: 4048
+        },
+        {
+            origin: "Chuí, RS",
+            destination: "João Pessoa, PB",
+            distanceKM: 4048
+        }
+    ],
+
+    // Return a unique, sorted list of all cities present in the route database.
+    getAllCities: function () {
+        var citySet = new Set();
+        this.routes.forEach(function (route) {
+            citySet.add(route.origin);
+            citySet.add(route.destination);
+        });
+        return Array.from(citySet).sort(function (a, b) {
+            return a.localeCompare(b, 'pt-BR');
+        });
+    },
+
+    // Find the distance between two cities, searching in both directions.
+    // Normalizes input by trimming and converting to lowercase.
+    findDistance: function (cityA, cityB) {
+        if (!cityA || !cityB) {
+            return null;
+        }
+
+        var normalizedA = cityA.trim().toLowerCase();
+        var normalizedB = cityB.trim().toLowerCase();
+
+        for (var i = 0; i < this.routes.length; i++) {
+            var route = this.routes[i];
+            var originNormalized = route.origin.trim().toLowerCase();
+            var destinationNormalized = route.destination.trim().toLowerCase();
+
+            if ((originNormalized === normalizedA && destinationNormalized === normalizedB) ||
+                (originNormalized === normalizedB && destinationNormalized === normalizedA)) {
+                return route.distanceKM;
+            }
+        }
+
+        return null;
+    }
+};
